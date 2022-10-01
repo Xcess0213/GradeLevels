@@ -32,13 +32,9 @@ Feature: Grade Levels (Add, Edit, Delete) Functionality Test
 
 
   @SmokeTest
-  Scenario Outline: Delete Grade Levels
-    And User delete Bank Account "<createdName>"
+  Scenario: Delete Grade Levels
+    And User delete Grade Levels createdName
     Then Success delete message should be displayed
-
-    Examples:
-      | createdName |
-      | GradeABCD   |
 
 
 
