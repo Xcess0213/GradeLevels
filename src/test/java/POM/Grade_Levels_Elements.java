@@ -1,13 +1,14 @@
 package POM;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Grade_Levels_Elements {
+import static Utils.Driver.driver;
 
-    public Grade_Levels_Elements(WebDriver driver) {
+public class Grade_Levels_Elements extends _01_Base_POM {
+
+    public Grade_Levels_Elements() {
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath="(//span[text()='Setup'])[1]")
@@ -34,6 +35,9 @@ public class Grade_Levels_Elements {
     @FindBy(xpath = "//span[text()='Save']")
     private WebElement clickSave;
 
+    @FindBy(xpath = "//div[text()='The Grade Level with Name \"native2\" already exists.']")
+    private WebElement negativeCreateGradeLevels;
+
     @FindBy(xpath = "(//span[@class='mat-ripple mat-button-ripple mat-button-ripple-round'])[12]")
     private WebElement clickEdit;
 
@@ -46,5 +50,51 @@ public class Grade_Levels_Elements {
     @FindBy(xpath = "//span[contains(text(),'Delete')] ")
     private WebElement deleteButton;
 
+    public WebElement getClickSetup() {
+        return clickSetup;
+    }
 
+    public WebElement getClickParameters() {
+        return clickParameters;
+    }
+
+    public WebElement getGradeLevels() {
+        return gradeLevels;
+    }
+
+    public WebElement getPlusIcon() {
+        return plusIcon;
+    }
+
+    public WebElement getAddName() {
+        return addName;
+    }
+
+    public WebElement getAddShortName() {
+        return addShortName;
+    }
+
+    public WebElement getAddOrder() {
+        return addOrder;
+    }
+
+    public WebElement getClickSave() {
+        return clickSave;
+    }
+
+    public WebElement getClickEdit() {
+        return clickEdit;
+    }
+
+    public WebElement getUpdatedSuccessfullyMessage() {
+        return updatedSuccessfullyMessage;
+    }
+
+    public WebElement getDeleteIcon() {
+        return deleteIcon;
+    }
+
+    public WebElement getDeleteButton() {
+        return deleteButton;
+    }
 }
